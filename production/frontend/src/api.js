@@ -2,7 +2,8 @@
  * API client for Contract Redline Assistant
  */
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+// In production, use relative URLs (same server). In dev, use localhost:3001
+const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '' : 'http://localhost:3001');
 
 /**
  * Analyze a contract against a playbook

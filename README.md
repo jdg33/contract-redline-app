@@ -30,34 +30,44 @@ This project has two versions:
 
 ### Step 2: Add Your API Key
 
-Edit the `.env` file in the root directory and replace:
-```
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
-```
+Your API key is already configured! Check `production/backend/.env` if you need to update it.
 
-With your actual key:
-```
-ANTHROPIC_API_KEY=sk-ant-your-actual-key-here
-```
+### Step 3: Build and Deploy
 
-### Step 3: Install and Run the Backend
+The application is ready to deploy. It's configured as a unified full-stack app:
 
+**Local Development (Two Servers):**
 ```bash
+# Terminal 1 - Backend
 cd production/backend
-npm install
+npm run dev
+
+# Terminal 2 - Frontend
+cd production/frontend
 npm run dev
 ```
 
-The API will start on http://localhost:3001
-
-### Step 4: Test the API
-
-Open another terminal and test:
+**Production (Single Server):**
 ```bash
-curl http://localhost:3001/health
+npm run build   # Builds everything
+npm start       # Starts production server on port 3001
 ```
 
-You should see: `{"status":"ok","timestamp":"..."}`
+Visit http://localhost:3001 to use the app
+
+### Step 4: Deploy to Cloud
+
+The app is ready to deploy to any Node.js hosting platform. Set these environment variables:
+
+- `ANTHROPIC_API_KEY` - Your Anthropic API key
+- `NODE_ENV` - Set to `production`
+- `PORT` - (Optional, defaults to 3001)
+
+**Deployment Commands:**
+```bash
+npm run build   # Automated during deployment
+npm start       # Starts the server
+```
 
 ## Project Structure
 

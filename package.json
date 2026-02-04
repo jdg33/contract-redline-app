@@ -1,0 +1,29 @@
+{
+  "name": "contract-redline-assistant",
+  "version": "1.0.0",
+  "description": "AI-powered contract analysis and redlining",
+  "type": "module",
+  "scripts": {
+    "install:backend": "cd production/backend && npm install",
+    "install:frontend": "cd production/frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "build:frontend": "cd production/frontend && npm run build",
+    "build": "npm run install:all && npm run build:frontend",
+    "start": "cd production/backend && npm start",
+    "dev:backend": "cd production/backend && npm run dev",
+    "dev:frontend": "cd production/frontend && npm run dev",
+    "postinstall": "npm run install:all"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "contract",
+    "legal",
+    "ai",
+    "redline",
+    "claude"
+  ],
+  "author": "",
+  "license": "MIT"
+}
